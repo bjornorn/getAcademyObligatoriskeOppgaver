@@ -1,17 +1,16 @@
 function fungererAlt(dato) {
-  isDateValid(dato);
-  return console.log();
-  isDigitsTen(dato);
-  someDotsMissing(dato);
-  YearDigits(dato);
-  MonthDigits(dato);
-  MonthValue(dato);
-  DayValue(dato);
-  ShortMonths(dato);
-  FebMonth(dato);
-  notLeapYear(dato);
+   return isDateValid(dato) &&
+  isDigitsTen(dato) &&
+  someDotsMissing(dato) &&
+  YearDigits(dato) &&
+  MonthDigits(dato) &&
+  MonthValue(dato) &&
+  DayValue(dato) &&
+  ShortMonths(dato) &&
+  FebMonth(dato) &&
+  notLeapYear(dato) &&
   LeapYear(dato);
-  return console.log('alt OK');
+  
 }
 
 function isDateValid(dato) {
@@ -58,9 +57,9 @@ function someDotsMissing(dato) {
   // (String.includes('.', 3 && '.', 6))
 
   if (dato[2] + dato[5] != '..') {
-    return true;
-  } else {
     return false;
+  } else {
+    return true;
   }
 }
 
@@ -69,9 +68,9 @@ function YearDigits(dato) {
   // console.log(year.length);
 
   if (year.length != 4) {
-    return true;
-  } else {
     return false;
+  } else {
+    return true;
   }
 }
 
@@ -103,9 +102,9 @@ function MonthValue(dato) {
   month1 = dato[4];
 
   if (month0 != 0 && month0 != 1 && month1 != 0 && month1 != 1 && month1 != 2) {
-    return true;
-  } else {
     return false;
+  } else {
+    return true;
   }
 }
 
@@ -136,9 +135,9 @@ function ShortMonths(dato) {
   let sumMonths = month0 + month1;
   let sumDays = day0 + day1;
 
-  console.log('shortMonths ' + shortMonthsGang);
-  console.log('days ' + sumDays);
-  console.log('Months ' + sumMonths);
+  // console.log('shortMonths ' + shortMonthsGang);
+  // console.log('days ' + sumDays);
+  // console.log('Months ' + sumMonths);
 
   if (
     (sumMonths == 2 ||
@@ -148,9 +147,9 @@ function ShortMonths(dato) {
       sumMonths == 11) &&
     sumDays > 30
   ) {
-    return true;
-  } else {
     return false;
+  } else {
+    return true;
   }
 }
 
@@ -166,9 +165,9 @@ function FebMonth(dato) {
   // console.log('sumMonths ' + sumMonths);
 
   if (sumMonths == 2 && sumDays > 29) {
-    return true;
-  } else {
     return false;
+  } else {
+    return true;
   }
 }
 
@@ -184,9 +183,9 @@ function notLeapYear(dato) {
     (Qday >= 29 && Qmonth == 2 && !(Qyear % 4 == 0 && Qyear % 100 != 0)) ||
     Qyear % 400 == 0
   ) {
-    return true;
+    return false;
   }
-  return false;
+  return true;
 }
 
 function LeapYear(dato) {
@@ -200,12 +199,12 @@ function LeapYear(dato) {
 
   if (QleapDay == 2902) {
     if (Qyear % 4 == 0 && Qyear % 100 != 0) {
-      return false;
-    } else {
       return true;
+    } else {
+      return false;
     }
   } else {
-    return false;
+    return true;
   }
 
   if (Qyear % 4 == 0 && Qyear % 100 != 0) {
