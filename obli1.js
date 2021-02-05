@@ -1,16 +1,17 @@
 function fungererAlt(dato) {
-   return isDateValid(dato) &&
-  isDigitsTen(dato) &&
-  someDotsMissing(dato) &&
-  YearDigits(dato) &&
-  MonthDigits(dato) &&
-  MonthValue(dato) &&
-  DayValue(dato) &&
-  ShortMonths(dato) &&
-  FebMonth(dato) &&
-  notLeapYear(dato) &&
-  LeapYear(dato);
-  
+  return (
+    isDateValid(dato) &&
+    isDigitsTen(dato) &&
+    someDotsMissing(dato) &&
+    YearDigits(dato) &&
+    MonthDigits(dato) &&
+    MonthValue(dato) &&
+    DayValue(dato) &&
+    ShortMonths(dato) &&
+    FebMonth(dato) &&
+    notLeapYear(dato) &&
+    LeapYear(dato)
+  );
 }
 
 function isDateValid(dato) {
@@ -22,7 +23,7 @@ function isDateValid(dato) {
   month = dato[3] + dato[4];
   lastDot = dato[5];
   year = dato[6] + dato[7] + dato[8] + dato[9];
-
+  dato = day + firstDot + month + lastDot + year;
   if (
     year.length === 4 &&
     year >= 0000 &&
@@ -32,7 +33,10 @@ function isDateValid(dato) {
     month <= 12 &&
     day.length === 2 &&
     day >= 1 &&
-    day <= 31
+    day <= 31 &&
+    dato.length == 10 &&
+    firstDot == '.' &&
+    lastDot == '.'
   ) {
     return true;
   } else {
