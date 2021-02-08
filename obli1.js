@@ -1,7 +1,5 @@
-function fungererAlt(dato) {
-  return (
-    isDateValid(dato) &&
-    isDigitsTen(dato) &&
+function isDateValid(dato) {
+  return isDigitsTen(dato) &&
     someDotsMissing(dato) &&
     YearDigits(dato) &&
     MonthDigits(dato) &&
@@ -10,39 +8,10 @@ function fungererAlt(dato) {
     ShortMonths(dato) &&
     FebMonth(dato) &&
     notLeapYear(dato) &&
-    LeapYear(dato)
-  );
+    LeapYear(dato);
 }
 
-function isDateValid(dato) {
-  parseInt(dato);
-  day = dato[0] + dato[1];
-  firstDot = dato[2];
-  month0 = dato[3];
-  month1 = dato[4];
-  month = dato[3] + dato[4];
-  lastDot = dato[5];
-  year = dato[6] + dato[7] + dato[8] + dato[9];
-  dato = day + firstDot + month + lastDot + year;
-  if (
-    year.length === 4 &&
-    year >= 0000 &&
-    year <= 9999 &&
-    month.length === 2 &&
-    month >= 1 &&
-    month <= 12 &&
-    day.length === 2 &&
-    day >= 1 &&
-    day <= 31 &&
-    dato.length == 10 &&
-    firstDot == '.' &&
-    lastDot == '.'
-  ) {
-    return true;
-  } else {
-    return false;
-  }
-}
+
 
 function isDigitsTen(dato) {
   // dato = dato.length;
@@ -211,7 +180,4 @@ function LeapYear(dato) {
     return true;
   }
 
-  if (Qyear % 4 == 0 && Qyear % 100 != 0) {
-    return true;
-  }
 }
