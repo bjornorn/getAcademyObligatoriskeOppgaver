@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Test Suite</title>
+    <link
+      rel="stylesheet"
+      href="https://code.jquery.com/qunit/qunit-2.14.0.css"
+    />
+  </head>
+  <body>
+    <div id="qunit"></div>
+    <div id="qunit-fixture"></div>
+    <script src="https://code.jquery.com/qunit/qunit-2.14.0.js"></script>
+    <script src="m1obli2controller.js"></script>
+
+    <script>
+      // model
+      let numbers;
+      let chosenBar;
+      let inputValue;
+      let barNo;
+
+      // view
+      function show() {}
+
+      QUnit.test('valgt stolpe nr 3', function (assert) {
+        // forberede
+
+        numbers = [7, 3, 1, 5, 8];
+        velgBar(3);
+        // handle
+        let actual = chosenBar;
+        let expected = 3;
+        // påstand
+        assert.equal(actual, expected);
+      });
+
+      QUnit.test('slett stolpe nr 3', function (assert) {
+        // forberede
+        numbers = [7, 3, 1, 5, 8];
+        chosenBar = 3; //fungerer frem til man endrer verdi tilbake til 3- da må man oppdatere siden.
+        fjernStolpe();
+        // handle
+        let actual = numbers;
+        let expected = [7, 3, 5, 8];
+        // påstand
+        assert.deepEqual(actual, expected);
+      });
+
+      QUnit.test('endre verdi fra 1 til 7 i stolpe nr 3', function (assert) {
+        // forberede
+        numbers = [7, 3, 1, 5, 8];
+        velgBar(3);
+        inputValue = 7;
+        endreStolpe();
+        // handle
+        let actual = numbers;
+        let expected = [7, 3, 7, 5, 8];
+        // påstand
+        assert.deepEqual(actual, expected);
+      });
+
+      QUnit.test('legge til en stolpe med verdi 5', function (assert) {
+        // forberede
+        numbers = [7, 3, 1, 5, 8];
+        inputValue = 5;
+        leggTilStolpe();
+        // handle
+        let actual = numbers;
+        let expected = [7, 3, 1, 5, 8, 5];
+        // påstand
+        assert.deepEqual(actual, expected);
+      });
+    </script>
+  </body>
+</html>
