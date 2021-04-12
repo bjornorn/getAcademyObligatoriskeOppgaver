@@ -1,0 +1,39 @@
+Versjon 1.0
+
+* Enkle person opplysninger
+* Max 5 spørsmål
+* Oversiktlig layout
+* Mulighet for å sende mail
+* Mulighet for å printe
+
+
+Versjon 2.0
+
+* Mulighet til å lagre data
+
+
+Versjon 3.0
+
+
+
+
+Workflow:
+Våknetid - sovnetid = mengde søvn
+IF Våknetid - sovnetid = negativ: sovnetid(minus 1 døgn)
+
+
+FERDIG:
+* Registere timer fra skjema i database
+* fiks så man kan redigere nye registrerte søvn seanser
+
+
+
+
+JOBBER MED: 
+* fiks så register søvn sjekker om "sleepNO" er ledig
+
+
+
+
+FREMTIDEN:
+ 
